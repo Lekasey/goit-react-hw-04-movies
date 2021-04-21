@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Reviews extends Component {
   state = {
-    reviews: null,
+    reviews: [],
   };
   async componentDidMount() {
     const { movieId } = this.props.match.params;
@@ -22,7 +22,7 @@ class Reviews extends Component {
       <>
         <h1>Reviews</h1>
         <ul>
-          {reviews ? (
+          {reviews.length > 0 ? (
             reviews.map(({ id, author, content }) => (
               <li key={id}>
                 <h3>Author: {author}</h3>
